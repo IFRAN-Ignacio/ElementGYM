@@ -1,0 +1,525 @@
+/* ----- RESET Y BASE ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0b0b0b;
+  color: #f0f0f0;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ----- HEADER / NAVBAR ----- */
+.navbar {
+  background: rgba(17, 17, 17, 0.92);
+  padding: 14px 0;
+  border-bottom: 2px solid #D4AF37;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(6px);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #D4AF37;
+  letter-spacing: 1px;
+}
+
+.logo img {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logo i {
+  font-size: 2rem;
+  color: #D4AF37;
+}
+
+.logo span {
+  font-weight: 300;
+  color: #fff;
+}
+
+.nav-left a {
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.nav-left a:hover {
+  color: #D4AF37;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-right .name {
+  color: #aaa;
+  font-size: 0.9rem;
+  border-left: 1px solid #333;
+  padding-left: 20px;
+}
+
+.nav-right .name span {
+  color: #D4AF37;
+}
+
+/* ----- HERO ----- */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), 
+              url(imagenes/fondo.jpeg) center/cover no-repeat;
+  padding: 90px 0 80px;
+  text-align: center;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.hero-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: #D4AF37;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  margin-bottom: 15px;
+}
+
+.hero-logo img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hero-logo i {
+  font-size: 5rem;
+  color: #D4AF37;
+}
+
+.hero-logo span {
+  font-weight: 300;
+  color: #fff;
+}
+
+.hero .slogan {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #D4AF37;
+  max-width: 800px;
+  margin: 10px auto 20px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.hero .subtitle {
+  font-size: 1.15rem;
+  max-width: 700px;
+  margin: 0 auto 35px;
+  color: #ddd;
+  line-height: 1.7;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+.btn-primary {
+  display: inline-block;
+  background: #D4AF37;
+  color: #111;
+  font-weight: 700;
+  padding: 14px 44px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  transition: background 0.3s, transform 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #b8942a;
+  transform: scale(1.03);
+}
+
+/* ----- ACTIVIDADES ----- */
+.actividades {
+  background: #111;
+  padding: 70px 0;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.actividades h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.actividades h2 span {
+  color: #D4AF37;
+}
+
+.actividades .desc-general {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 40px;
+  font-size: 1.05rem;
+}
+
+.actividades-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.actividad-card {
+  position: relative;
+  overflow: hidden;
+
+  border-radius: 16px;
+  padding: 28px 22px;
+  border: 1px solid #2a2a2a;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.actividad-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0,0,0,0.65); /* oscurece la foto */
+
+  z-index: 1;
+}
+
+.actividad-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.actividad-card:hover {
+  border-color: #D4AF37;
+  transform: translateY(-6px);
+}
+
+.actividad-card .icono {
+  font-size: 2.6rem;
+  color: #D4AF37;
+  margin-bottom: 10px;
+}
+
+.actividad-card h3 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.actividad-card .dias {
+  color: #D4AF37;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.actividad-card .horarios {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-left: 4px;
+
+  color: #bbb;
+  font-size: 1rem;
+  margin: 4px 0;
+}
+
+.actividad-card .horarios i {
+  color: #D4AF37;
+  flex-shrink: 0;
+}
+
+.actividad-card .descripcion {
+  color: #ffffff;
+  font-size: 0.95rem;
+  margin-top: 12px;
+  border-top: 1px solid #2a2a2a;
+  padding-top: 12px;
+}
+
+.actividad-card .profesores {
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+
+.actividad-card .profesores strong {
+  color: #D4AF37;
+}
+
+/* ----- HORARIOS ----- */
+.horarios {
+  background: #0f0f0f;
+  padding: 60px 0;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.horarios .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.horarios-info h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.horarios-info h2 span {
+  color: #D4AF37;
+}
+
+.horarios-info ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.horarios-info li {
+  font-size: 1.1rem;
+  color: #ccc;
+  padding: 8px 0;
+  border-bottom: 1px solid #222;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.horarios-info li i {
+  color: #D4AF37;
+  width: 24px;
+  text-align: center;
+}
+
+.horarios-info li strong {
+  color: #fff;
+  margin-right: 6px;
+}
+
+.horarios-extra {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #2a2a2a;
+}
+
+.horarios-extra h3 {
+  color: #D4AF37;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.horarios-extra p {
+  color: #bbb;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+/* ----- UBICACIÓN ----- */
+.ubicacion {
+  background: #111;
+  padding: 70px 0;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.ubicacion .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.ubicacion-text h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.ubicacion-text h2 span {
+  color: #D4AF37;
+}
+
+.ubicacion-text p {
+  color: #bbb;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.ubicacion-text i {
+  color: #D4AF37;
+  margin-right: 8px;
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 300px;
+  border-radius: 16px;
+  border: 1px solid #333;
+}
+
+/* ----- FOOTER ----- */
+.footer {
+  background: #0b0b0b;
+  padding: 40px 0 30px;
+  border-top: 1px solid #2a2a2a;
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.footer .social-links {
+  display: flex;
+  gap: 30px;
+  font-size: 1.8rem;
+}
+
+.footer .social-links a {
+  color: #ccc;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.footer .social-links a:hover {
+  color: #D4AF37;
+  transform: scale(1.1);
+}
+
+.footer .phone-footer {
+  color: #D4AF37;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.footer .phone-footer i {
+  margin-right: 10px;
+}
+
+.footer .copy {
+  color: #555;
+  font-size: 0.85rem;
+  margin-top: 10px;
+}
+
+/* ----- RESPONSIVE ----- */
+@media (max-width: 850px) {
+  .hero-logo {
+    font-size: 3rem;
+  }
+  .hero-logo img {
+    height: 60px;
+    width: 60px;
+  }
+  .hero-logo i {
+    font-size: 3.5rem;
+  }
+  .hero .slogan {
+    font-size: 1.3rem;
+  }
+  .horarios .container,
+  .ubicacion .container {
+    grid-template-columns: 1fr;
+  }
+  .navbar .container {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .nav-left {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .nav-right .name {
+    border-left: none;
+    padding-left: 0;
+  }
+  .actividades-grid {
+    grid-template-columns: 1fr;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+  .logo img {
+    height: 35px;
+    width: 35px;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-logo {
+    font-size: 2.2rem;
+  }
+  .hero-logo img {
+    height: 45px;
+    width: 45px;
+  }
+  .hero-logo i {
+    font-size: 2.8rem;
+  }
+  .btn-primary {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+  .horarios-info li {
+    font-size: 0.95rem;
+  }
+}
